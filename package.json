@@ -1,0 +1,49 @@
+{
+  "name": "dsh-updater",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness 更新检查插件：定时检查新版本，logo 右上角 NEW 角标提醒，并在设置中提供「关于」Tab（版本信息、手动检查、GitHub 加速开关、升级指引）。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml"
+  ],
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "plugin",
+    "updater",
+    "update-checker"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onewilk/dsh-updater.git"
+  },
+  "homepage": "https://github.com/onewilk/dsh-updater#readme",
+  "bugs": {
+    "url": "https://github.com/onewilk/dsh-updater/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web"
+    }
+  },
+  "license": "MIT"
+}

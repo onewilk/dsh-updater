@@ -1,0 +1,6 @@
+# dsh-updater bundle patch：将本插件的 host 半（lib/index.js，注册更新检查路由）
+# 作为 cordis 插件加载。client 半由 package.json 的 dsh.client 字段自动发现，
+# 无需在此声明。
+- insert:
+    - id: dsh-updater
+      name: 'dsh-updater'
