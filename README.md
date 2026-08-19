@@ -1,5 +1,7 @@
 # dsh-updater
 
+[![dsh-plugin](https://img.shields.io/badge/dsh--plugin-DeepSeek%20Harness-3772ff)](https://github.com/topics/dsh-plugin)
+
 > DeepSeek Harness 更新检查插件：定时检查新版本，在左上角 logo 右上角显示红色 `NEW` 角标提醒，并在设置中提供「关于」Tab。
 
 [English](#english) · 中文
@@ -75,6 +77,8 @@ ln -sfn "$PWD" "$DSH_HOME/profiles/web/node_modules/dsh-updater"
   }
 }
 ```
+
+> 本仓库已在 GitHub 添加官方推荐的 [`dsh-plugin`](https://github.com/topics/dsh-plugin) topic，用于插件被发现 / 收录。
 
 - `dsh.bundle.patch`：host 半（`lib/index.js`，注册 `/plugins/dsh-updater/*` 路由）通过 `cordis.patch.yml` 的 `insert` 自动加载，`dsh plugin add` 安装后自动加入 bundles 层。
 - `dsh.client`：client 半（`lib/client.js`，关于 Tab / NEW 角标 / toast）由 DSH 客户端模块系统按 `platform` 与 `inject` 自动发现并注入。
