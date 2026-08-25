@@ -28,10 +28,30 @@
 
 ## 安装
 
-### 通过 `dsh plugin`（推荐）
+### 方式一：让 AI Agent 自动安装（推荐）
+
+把下面这段提示词发给任意 AI 编程助手（Claude Code / Cursor / Copilot / Codex 等），它会自动完成安装与生效：
+
+```text
+请帮我在当前环境安装 DeepSeek Harness 更新检查插件 dsh-updater，并完成应用。按以下步骤操作：
+
+1. 运行安装命令（二选一，npm 优先）：
+   - npm：dsh plugin --profile web add dsh-updater
+   - GitHub：dsh plugin --profile web add github:onewilk/dsh-updater
+2. 重启 DeepSeek Harness Web 界面使其生效：
+   npx @deepseek-ai/dsh@latest web
+3. 验证：打开浏览器访问 harness 页面，进入 设置 → 关于，应能看到当前版本、最新版本与「检查更新」入口，即安装成功。
+
+注意事项：
+- 本插件为纯 JavaScript，无需构建，dsh plugin add 安装后即可用。
+- 安装后必须重启 harness 才能生效。
+- 若 GitHub 直连受限，请改用 npm 安装方式。
+```
+
+### 方式二：手动命令安装
 
 ```bash
-# 从 npm 安装
+# 从 npm 安装（推荐）
 dsh plugin --profile web add dsh-updater
 
 # 或从 GitHub 安装
